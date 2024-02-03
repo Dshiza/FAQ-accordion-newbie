@@ -1,0 +1,176 @@
+/*## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+- White: hsl(0, 0%, 100%)
+- Light pink: hsl(275, 100%, 97%)
+- Grayish purple: hsl(292, 16%, 49%)
+- Dark purple: hsl(292, 42%, 14%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraphs): 16px
+
+### Font
+
+- Family: [Work Sans](https://fonts.google.com/specimen/Work+Sans)
+- Weights: 400, 600, 700*/
+
+@font-face {
+    font-family: WorkSans;
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+:root {
+    --ff-sans: WorkSans, sans-serif;
+
+    --fs-base: 1rem;
+    --fs-heading: 4rem;
+    --fs-heading2: 1.1rem;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-extraBold: 900;
+
+
+    /*COLORS*/
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-lpink: hsl(279, 100%, 97%);
+    --clr-grayPurple: hsl(292, 16%, 49%);
+    --clr-dPurple: hsl(292, 42%, 14%);
+
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+html{
+    font-family: var(--ff-sans);
+    line-height: 1.2;
+    
+}
+body {
+    background-color: var(--clr-lpink);  
+}
+hr {
+    border-top: 1px solid hsl(0, 0%, 100%);
+}
+.wrapper{
+    
+    position: relative;
+    
+}
+.bg img {
+    height: 100%;
+    width: 100%;
+    
+}
+.card {
+    width: 600px;
+    background: white;
+    margin: 4rem 0 0 -300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-radius: 16px;
+    
+    
+}
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100px;
+}
+.card h1 {
+    color: var(--clr-dPurple);
+    font-size: var(--fs-heading);
+}
+.card img {
+    margin-block: auto;
+}
+
+.accordion-wrapper h2 {
+    font-size: var(--fs-heading2);
+    font-weight: var(--fw-bold);
+}
+.accordion-wrapper a {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none; 
+    
+}
+.expandable::after {
+    content: url("./assets/images/icon-plus.svg");
+}
+/*<img src="./assets/images/icon-plus.svg" alt="icon plus">*/
+.panel {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: var(--fw-ex);
+    color: hsl(287, 4%, 56%);
+    margin: 0 0 20px;
+    display: none;
+    max-height: 150px;
+    
+ 
+}
+.active {
+    display: block;
+}
+.active::after {
+    content: url("./assets/images/icon-minus.svg");
+}
+
+/*
+.accordion-wrapper section:not(:first-child) .panel {
+    display: none;
+}*/
+
+@media only screen and (max-width:700px) {
+    
+    .bg img {
+        content: url("./assets/images/background-pattern-mobile.svg");
+        
+        
+    }
+    .card {
+        width: 350px;
+        margin-inline:auto;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        right: 0;
+        
+    }
+    .card h1 {
+        
+        font-size: 3rem;
+    }
+    .accordion-wrapper h2 {
+        font-size: 1rem;
+        
+        
+    }
+    .panel{
+        font-size: 0.8;
+    }
+}
+
+
+
+
